@@ -1,6 +1,6 @@
 # hash
 
-hash is an in-memory Redis like hash datastructure
+hash is an in-memory Redis like [hash](https://redis.io/commands#hash) datastructure
 
 Getting Started
 ===============
