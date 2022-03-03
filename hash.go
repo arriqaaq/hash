@@ -27,6 +27,18 @@ func New() *Hash {
 	}
 }
 
+func (h *Hash) Keys() []string {
+	keys := make([]string, len(h.records))
+
+	i := 0
+	for k := range h.records {
+		keys[i] = k
+		i++
+	}
+
+	return keys
+}
+
 func (h *Hash) HSet(key string, field string, value interface{}) (res int) {
 	if !h.exists(key) {
 		h.records[key] = make(map[string]interface{})
@@ -128,7 +140,7 @@ func (h *Hash) HVals(key string) (val []interface{}) {
 	return
 }
 
-func (h *Hash) Del(key string) {
+func (h *Hash) HClear(key string) {
 	if !h.exists(key) {
 		return
 	}

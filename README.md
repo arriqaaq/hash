@@ -2,6 +2,13 @@
 
 hash is an in-memory Redis like [hash](https://redis.io/commands#hash) datastructure
 
+| Property | Type | Description |
+|---|---|---|
+| `key` | `string` | The identifier of the hash key |
+| `member` | `string` | The identifier of the member. It must be unique within the hash. |
+| `value` | `interface {}` | value associated with this node |
+
+
 Getting Started
 ===============
 
