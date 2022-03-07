@@ -114,3 +114,11 @@ func TestHash_HLen(t *testing.T) {
 	hash := makeHash(3)
 	assert.Equal(t, 3, hash.HLen(testKey))
 }
+
+func TestHash_Keys(t *testing.T) {
+	hash := New()
+	hash.HSet("k1", "a", []byte("hash_1"))
+
+	n := hash.Keys()
+	assert.Equal(t, 1, len(n))
+}

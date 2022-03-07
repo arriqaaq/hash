@@ -28,12 +28,10 @@ func New() *Hash {
 }
 
 func (h *Hash) Keys() []string {
-	keys := make([]string, len(h.records))
+	keys := make([]string, 0, len(h.records))
 
-	i := 0
 	for k := range h.records {
-		keys[i] = k
-		i++
+		keys = append(keys, k)
 	}
 
 	return keys
